@@ -15,6 +15,9 @@
             elseif ($enlacesModel == "registro") {
                 $module = "views/modules/registro.php";
             }
+            elseif ($enlacesModel == "ok") {
+                $module = "views/modules/registro.php";
+            }
             else
             {
                 $module = "views/modules/registro.php";

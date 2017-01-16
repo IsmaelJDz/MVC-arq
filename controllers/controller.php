@@ -38,14 +38,24 @@
         public function registroUsuarioController()
         {
 
+
             if (isset($_POST['usuario'])) {
                 # code...
+
+                $pass = $_POST['password'];
+                $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
+
                 $arrayDatos = array('usuario' => $_POST['usuario'],
-                                'password' => $_POST['password'],
+                                'password' => $pass_hash,
                                 'email' => $_POST['email'] );
 
                 $respuesta = Datos::registroUsuarioModel($arrayDatos, 'usuarios');
-                echo $respuesta;
+
+                if($respuesta == "success")
+                {
+                    header("location:index.php?action=ok");
+                }
+                else{header("location:index.php");}
             }
 
         }

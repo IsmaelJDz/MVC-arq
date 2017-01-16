@@ -2,7 +2,7 @@
 
 <form method="post">
     <input type="text" class="form-control" placeholder="Usuario" name="usuario" required>
-    <input type="text" class="form-control" placeholder="Contraseña" name="password" required>
+    <input type="password" class="form-control" placeholder="Contraseña" name="password" required>
     <input type="text" class="form-control" placeholder="Email" name="email" required>
     <input type="submit" value="Enviar" class="btn btn-primary">
 </form>
@@ -12,5 +12,9 @@
     $registro = new MvcController();
     $registro ->registroUsuarioController();
 
-
+    if (isset($_GET['action'])) {
+        if ($_GET['action'] == 'ok') {
+            echo "Registro Exitoso";
+        }
+    }
  ?>

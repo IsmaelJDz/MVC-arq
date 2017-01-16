@@ -13,10 +13,8 @@
             $stmt->bindParam(":password", $datosModel['password'], PDO::PARAM_STR);
             $stmt->bindParam(":email", $datosModel['email'], PDO::PARAM_STR);
 
-            $stmt->execute();
-
             if ($stmt->execute()) {
-                return "sucess";
+                return "success";
             }
             else{ return "error";}
         }
